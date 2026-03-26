@@ -1018,7 +1018,6 @@
 
   /* Painel mobile nav */
   .mobile-nav {
-    display: none;
     position: fixed;
     inset: 0;
     top: 68px;
@@ -1104,9 +1103,9 @@
   /* ═══════════════════════════════
      RESPONSIVO — MOBILE (≤ 768px)
   ═══════════════════════════════ */
-  @media (max-width: 768px) {
+  @media (max-width: 820px) {
     /* NAV */
-    .nav-hamburger { display: flex; }
+    .nav-hamburger { display: flex !important; }
     .nav-inner > nav,
     .nav-inner > .nav-right { display: none; }
     .nav-inner { padding: 0 20px; gap: 0; }

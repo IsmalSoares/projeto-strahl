@@ -1,8 +1,15 @@
   // ─── Mobile nav toggle ───
   function toggleMobileNav() {
-    document.body.classList.toggle('nav-open');
+    var nav = document.getElementById('mobile-nav');
+    var btn = document.getElementById('nav-toggle');
+    if (!nav) return;
+    var isOpen = nav.style.display === 'flex';
+    nav.style.display = isOpen ? 'none' : 'flex';
+    document.body.classList.toggle('nav-open', !isOpen);
   }
   function closeMobileNav() {
+    var nav = document.getElementById('mobile-nav');
+    if (nav) nav.style.display = 'none';
     document.body.classList.remove('nav-open');
   }
 
