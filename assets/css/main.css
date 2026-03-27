@@ -1195,3 +1195,114 @@
     .prot-badges { grid-template-columns: 1fr; }
     .newsletter-inner h2 { font-size: 20px; }
   }
+
+  /* ═══════════════════════════════
+     DROPDOWN ANINHADO — MINING BLOCK
+  ═══════════════════════════════ */
+  .dropdown-sub-wrap { position: relative; }
+  .dropdown-sub-trigger {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .sub-arrow { font-size: 16px !important; transition: transform .2s; }
+  .dropdown-sub-wrap:hover .sub-arrow { color: var(--red); transform: rotate(-90deg); }
+  .dropdown-sub-panel {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -8px;
+    background: var(--white);
+    min-width: 270px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.13);
+    border-left: 3px solid var(--red);
+    border-radius: 0 4px 4px 0;
+    padding: 8px 0;
+    z-index: 200;
+  }
+  .dropdown-sub-wrap:hover .dropdown-sub-panel,
+  .dropdown-sub-wrap.open .dropdown-sub-panel { display: block; }
+  .dropdown-sub-panel a {
+    display: block;
+    padding: 10px 20px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--navy);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background .15s, color .15s;
+  }
+  .dropdown-sub-panel a:hover { background: var(--gray-bg); color: var(--red); }
+  .dropdown-sub-panel a.active-sub { color: var(--red); padding-left: 16px; border-left: 2px solid var(--red); }
+
+  /* ═══════════════════════════════
+     MINING BLOCK — SERIES NAV BAR
+  ═══════════════════════════════ */
+  .mining-series-nav {
+    background: var(--navy);
+    border-bottom: 3px solid var(--red);
+  }
+  .mining-series-inner {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+  .mining-series-lbl {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: rgba(255,255,255,.45);
+    padding: 14px 12px 14px 0;
+    flex-shrink: 0;
+    border-right: 1px solid rgba(255,255,255,.12);
+    margin-right: 8px;
+  }
+  .mining-series-btn {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: rgba(255,255,255,.60);
+    padding: 14px 16px;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+    flex-shrink: 0;
+    transition: color .2s, border-color .2s;
+  }
+  .mining-series-btn:hover { color: var(--white); }
+  .mining-series-btn.active { color: var(--white); border-bottom-color: var(--red); }
+
+  /* ═══════════════════════════════
+     MINING BLOCK — PRODUCT TYPE LABEL
+  ═══════════════════════════════ */
+  .product-type-lbl {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .10em;
+    color: var(--white);
+    background: var(--red);
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 12px;
+  }
+
+  /* Ajuste responsivo para mining-series-nav */
+  @media (max-width: 820px) {
+    .mining-series-lbl { display: none; }
+    .mining-series-btn { font-size: 12px; padding: 12px 12px; }
+  }
