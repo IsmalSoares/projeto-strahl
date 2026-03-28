@@ -1157,10 +1157,12 @@
     .footer-bottom { padding: 20px; font-size: 11px; }
 
     /* LINHA CEKTON */
-    .linha-hero { padding: 40px 0; min-height: auto; }
-    .linha-hero-inner { grid-template-columns: 1fr; gap: 0; }
+    .linha-hero { padding: 40px 0 32px; min-height: auto; }
+    .linha-hero-inner { grid-template-columns: 1fr; gap: 24px; }
     .linha-hero h1 { font-size: 44px; }
-    .linha-hero-img { display: none; }
+    .linha-hero-img { display: flex; justify-content: center; }
+    .linha-hero-img-card { width: 220px; min-height: 180px; padding: 20px 24px; }
+    .linha-hero-img-card img { width: 160px; }
 
     .dif-grid { grid-template-columns: 1fr; gap: 16px; }
     .comp-strip-inner { flex-wrap: wrap; gap: 20px; }
