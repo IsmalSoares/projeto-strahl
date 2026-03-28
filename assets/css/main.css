@@ -1166,7 +1166,8 @@
 
     .dif-grid { grid-template-columns: 1fr; gap: 16px; }
     .comp-strip-inner { flex-wrap: wrap; gap: 20px; }
-    .dims-cards { grid-template-columns: 1fr; gap: 16px; }
+    .dims-cards { grid-template-columns: 1fr !important; gap: 16px; }
+    .tipos-grid { display: flex !important; flex-direction: column; gap: 16px; }
     .ip-header { flex-direction: column; align-items: flex-start; gap: 12px; }
 
     /* Scroll horizontal em tabelas */
@@ -1394,6 +1395,9 @@
   }
   .mining-section-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
   .mining-section-info { flex: 1; }
+
+  /* Grid de tipos de produto — colapsa para 1 col no mobile */
+  .tipos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
 
   /* Responsivo */
   @media (max-width: 820px) {
