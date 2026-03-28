@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha Técnica — BEM/4406 · STRAHL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Barlow", sans-serif; font-size: 11pt; color: #1b1c1c; background: #fff; }
+    @page { size: A4 portrait; margin: 14mm 16mm 14mm 16mm; }
+    @media print {
+      .no-print { display: none !important; }
+      body { font-size: 9.5pt; }
+      a { text-decoration: none; color: inherit; }
+      .page-break { page-break-before: always; }
+      .avoid-break { page-break-inside: avoid; }
+    }
+    @media screen {
+      body { background: #e5e5e5; padding: 24px 0 40px; }
+      .sheet { width: 210mm; min-height: 297mm; background: #fff; margin: 0 auto; padding: 14mm 16mm; box-shadow: 0 2px 24px rgba(0,0,0,.18); }
+    }
+    .print-bar { width: 210mm; margin: 0 auto 16px; display: flex; justify-content: flex-end; gap: 10px; }
+    .btn-print { background: #c0392b; color: #fff; border: none; padding: 9px 20px; font-family: "Barlow",sans-serif; font-size: 13px; font-weight: 600; border-radius: 4px; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .btn-print:hover { background: #a93226; }
+    .ds-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 3px solid #1a2744; padding-bottom: 10px; margin-bottom: 10px; }
+    .ds-header img { height: 36px; }
+    .ds-header-right { text-align: right; }
+    .ref-code { font-family: "Barlow Condensed",sans-serif; font-size: 22px; font-weight: 800; color: #c0392b; letter-spacing: .04em; }
+    .ref-sub { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: .08em; margin-top: 2px; }
+    h1.ds-title { font-family: "Barlow Condensed",sans-serif; font-size: 17pt; font-weight: 800; text-transform: uppercase; color: #1a2744; line-height: 1.15; margin-bottom: 2px; }
+    .ds-subtitle { font-size: 10pt; color: #555; margin-bottom: 6px; }
+    .badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 4px; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 9pt; font-weight: 700; }
+    .badge-red { background: #c0392b; color: #fff; }
+    .badge-navy { background: #1a2744; color: #fff; }
+    .badge-outline { border: 1px solid #1a2744; color: #1a2744; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; margin-top: 10pt; }
+    .photo-box { border: 1px solid #ddd; border-radius: 4px; overflow: hidden; background: #f8f8f8; display: flex; align-items: center; justify-content: center; min-height: 160px; }
+    .photo-box img { max-width: 100%; max-height: 220px; object-fit: contain; padding: 8px; }
+    .section-lbl { font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: .10em; color: #888; margin-bottom: 5pt; margin-top: 10pt; border-bottom: 1px solid #eee; padding-bottom: 3pt; }
+    table.spec-tbl { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
+    table.spec-tbl tr:nth-child(even) { background: #f5f6f8; }
+    table.spec-tbl td { padding: 4pt 6pt; border-bottom: 1px solid #eee; }
+    table.spec-tbl td:first-child { color: #555; width: 52%; }
+    table.spec-tbl td:last-child { font-weight: 600; color: #1b1c1c; }
+    .ip-box { display: flex; gap: 10px; margin-top: 10pt; }
+    .ip-item { flex: 1; border: 1px solid #ddd; border-radius: 4px; padding: 8pt; text-align: center; background: #f8f8f8; }
+    .ip-num { font-family: "Barlow Condensed",sans-serif; font-size: 22pt; font-weight: 800; color: #1a2744; line-height: 1; }
+    .ip-desc { font-size: 8pt; color: #666; margin-top: 3pt; }
+    .dif-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; margin-top: 8pt; }
+    .dif-item { border-left: 3px solid #c0392b; padding: 6pt 8pt; background: #fafafa; }
+    .dif-title { font-weight: 700; font-size: 9pt; color: #1a2744; margin-bottom: 3pt; }
+    .dif-text { font-size: 8.5pt; color: #555; line-height: 1.5; }
+    .footer-ds { margin-top: 14pt; padding-top: 8pt; border-top: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; font-size: 8pt; color: #888; }
+    .footer-ds strong { color: #1a2744; }
+    .pos-box { border: 1px solid #ddd; border-radius: 4px; padding: 8pt; text-align: center; background: #fff3f3; margin-top: 8pt; }
+    .pos-label { font-size: 8pt; color: #888; text-transform: uppercase; letter-spacing: .06em; }
+    .pos-val { font-family: "Barlow Condensed",sans-serif; font-size: 20pt; font-weight: 800; color: #c0392b; }
+    .pos-volt { font-size: 9pt; color: #c0392b; font-weight: 600; }
+    .norm-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6pt; }
+    .norm-chip { border: 1px solid #1a2744; color: #1a2744; padding: 2px 8px; border-radius: 3px; font-size: 8.5pt; font-weight: 600; }
+    .warning-box { border: 1px solid #f0ad4e; background: #fffbf0; border-radius: 4px; padding: 8pt 10pt; font-size: 8.5pt; color: #7a5c00; margin-top: 10pt; }
+  </style>
+</head>
+<body>
+
+<div class="print-bar no-print">
+  <button class="btn-print" onclick="window.print()">&#x2399; Imprimir / Salvar PDF</button>
+  <button class="btn-print" style="background:#1a2744" onclick="window.close()">&#x2715; Fechar</button>
+</div>
+
+<div class="sheet">
+
+  <!-- HEADER -->
+  <div class="ds-header">
+    <div>
+      <img src="../images/logo_strahl.png" alt="STRAHL">
+      <div style="font-size:8pt;color:#888;margin-top:4pt">Materiais Elétricos STRAHL — Desde 1986</div>
+    </div>
+    <div class="ds-header-right">
+      <div class="ref-code">BEM/4406</div>
+      <div class="ref-sub">Ficha Técnica de Produto</div>
+    </div>
+  </div>
+
+  <!-- TITLE -->
+  <h1 class="ds-title">Tomada de Sobrepor 400A · 3P+T · Alta Corrente</h1>
+  <div class="ds-subtitle">Linha Mining Block® · Série Alta Corrente · Alumínio Fundido · Contatos Banhados a Prata</div>
+  <div class="badges">
+    <span class="badge badge-red">IP67</span>
+    <span class="badge badge-navy">400A</span>
+    <span class="badge badge-outline">IEC 309-2</span>
+    <span class="badge badge-outline">EN 60309-2</span>
+    <span class="badge badge-outline">DIN VDE 0623</span>
+  </div>
+
+  <!-- BODY: 2 COLUNAS -->
+  <div class="two-col">
+
+    <!-- COLUNA ESQUERDA: Foto + resumo -->
+    <div>
+      <div class="photo-box">
+        <img src="../images/mining/Tomada-de-Sobrepor-4406.jpg" alt="Tomada de Sobrepor BEM/4406">
+      </div>
+
+      <div class="pos-box">
+        <div class="pos-label">Posição Horária · Cor</div>
+        <div class="pos-val">6H</div>
+        <div class="pos-volt">380–415V · Vermelho</div>
+      </div>
+
+      <div class="section-lbl" style="margin-top:10pt">Índice de Proteção</div>
+      <div class="ip-box">
+        <div class="ip-item">
+          <div class="ip-num">6</div>
+          <div class="ip-desc">À prova<br>de poeira</div>
+        </div>
+        <div class="ip-item">
+          <div class="ip-num">7</div>
+          <div class="ip-desc">Imersão<br>temporária</div>
+        </div>
+        <div class="ip-item">
+          <div class="ip-num">10</div>
+          <div class="ip-desc">Impacto<br>20,0 J (IK10)</div>
+        </div>
+      </div>
+
+      <div class="section-lbl" style="margin-top:10pt">Normas e Conformidade</div>
+      <div class="norm-row">
+        <span class="norm-chip">IEC 309-2</span>
+        <span class="norm-chip">EN 60309-2</span>
+        <span class="norm-chip">DIN VDE 0623</span>
+        <span class="norm-chip">NBR ISO 9001</span>
+      </div>
+
+      <div class="warning-box" style="margin-top:10pt">
+        <strong>Pino Piloto Duplo:</strong> Na conexão é o último contato estabelecido; na desconexão é o primeiro a ser interrompido — garantindo desligamento automático via contator.
+      </div>
+    </div>
+
+    <!-- COLUNA DIREITA: Especificações -->
+    <div>
+      <div class="section-lbl">Especificações Elétricas</div>
+      <table class="spec-tbl">
+        <tr><td>Tensão de Utilização</td><td>400V (até 1000Vcc)</td></tr>
+        <tr><td>Corrente Nominal</td><td>400A</td></tr>
+        <tr><td>Nº de Pólos</td><td>3P + T (4 pinos)</td></tr>
+        <tr><td>Posição Pino Terra</td><td>6H</td></tr>
+        <tr><td>Frequência</td><td>50 – 60 Hz</td></tr>
+        <tr><td>Temperatura de Trabalho</td><td>−40°C a +100°C</td></tr>
+        <tr><td>Resistência de Isolamento</td><td>&gt; 500 MOhm</td></tr>
+        <tr><td>CTI do Inserto</td><td>&gt; 600</td></tr>
+      </table>
+
+      <div class="section-lbl" style="margin-top:8pt">Materiais e Cabos</div>
+      <table class="spec-tbl">
+        <tr><td>Carcaça</td><td>Alumínio Fundido</td></tr>
+        <tr><td>Contatos / Buchas</td><td>Cobre Eletrolítico Banhado a Prata</td></tr>
+        <tr><td>Sistema de Conexão</td><td>Pinos com Anéis de Compressão</td></tr>
+        <tr><td>Bitola do Cabo Principal</td><td>185 – 240 mm² · 1kV (Classe 1+2)</td></tr>
+        <tr><td>Bitola do Cabo Piloto</td><td>1,5 – 4,0 mm² · 1kV (Classe 1+2)</td></tr>
+        <tr><td>Tipo de Montagem</td><td>Suporte de Parede (Sobrepor)</td></tr>
+      </table>
+
+      <div class="section-lbl" style="margin-top:8pt">Resistência ao Fio Incandescente (GWIT)</div>
+      <table class="spec-tbl">
+        <tr><td>Norma de Referência</td><td>IEC 60695-2-13</td></tr>
+        <tr><td>Temperatura GWIT</td><td>775°C / 960°C</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- DIFERENCIAIS -->
+  <div class="section-lbl" style="margin-top:12pt">Diferenciais Técnicos</div>
+  <div class="dif-grid">
+    <div class="dif-item">
+      <div class="dif-title">Proteção Completa IP67</div>
+      <div class="dif-text">À prova de poeira e imersão temporária em água. Confiabilidade total em condições ambientais adversas.</div>
+    </div>
+    <div class="dif-item">
+      <div class="dif-title">Proteção Permanente Contra Contato</div>
+      <div class="dif-text">Protege contra choque elétrico por toque inadvertido e previne falhas por penetração de partículas estranhas.</div>
+    </div>
+    <div class="dif-item">
+      <div class="dif-title">Inversão de Polos Impossível</div>
+      <div class="dif-text">Arquitetura interna que impede a inversão de polos, garantindo conexões corretas e em conformidade normativa.</div>
+    </div>
+    <div class="dif-item">
+      <div class="dif-title">Buchas Banhadas a Prata + Anel de Compressão</div>
+      <div class="dif-text">Mantêm contato permanente entre pino e bucha, evitando aquecimento. Alta resistência à abrasão e oxidação.</div>
+    </div>
+    <div class="dif-item">
+      <div class="dif-title">Sensor de Temperatura Integrado</div>
+      <div class="dif-text">Monitora temperatura no miolo e aciona desligamento automático em caso de sobrecarga prolongada.</div>
+    </div>
+    <div class="dif-item">
+      <div class="dif-title">Sensor de Corrente + Porta de Segurança</div>
+      <div class="dif-text">Monitora falha de isolação e exige porta fechada para energizar o sistema. Manopla com dispositivo para cadeado.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-ds">
+    <div><strong>STRAHL</strong> · Av. Cel. Sezefredo Fagundes, 4600 · CEP 02306-004 · São Paulo – SP</div>
+    <div>vendas@strahl.com · (11) 2818-3838 · www.strahl.com</div>
+    <div>Pág. 1/1 · Rev. 2026</div>
+  </div>
+
+</div><!-- /sheet -->
+</body>
+</html>

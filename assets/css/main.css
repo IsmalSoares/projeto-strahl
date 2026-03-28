@@ -767,6 +767,9 @@
   .ds-nav-bar {
     background: var(--gray-mid);
     border-bottom: 1px solid var(--gray-border);
+    position: sticky;
+    top: 68px;
+    z-index: 50;
   }
   .ds-nav-bar-inner {
     max-width: 1280px;
@@ -1334,6 +1337,17 @@
     padding: 16px;
   }
   .mining-product-img img { max-height: 100%; max-width: 100%; object-fit: contain; }
+  .mining-product-img-draw {
+    background: #f0f2f5;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 12px;
+    border-bottom: 1px solid var(--gray-border);
+  }
+  .mining-product-img-draw img { max-height: 100%; max-width: 100%; object-fit: contain; }
   .mining-product-body { padding: 20px; }
   .mining-product-body h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 20px; text-transform: uppercase; color: var(--navy); margin: 10px 0 8px; }
   .mining-product-body p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
@@ -1384,7 +1398,38 @@
     .mining-product-showcase { grid-template-columns: 1fr; }
     .mining-section-divider { flex-direction: column; align-items: flex-start; }
     .mining-section-img { width: 80px; height: 80px; }
+    /* Novas seções — colapso mobile */
+    .mining-sobre-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+    .mining-contatos-grid { grid-template-columns: 1fr !important; }
+    .mining-protecao-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .mining-segmentos-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .mining-projeto-especial { flex-direction: column !important; text-align: center; }
+    .mining-projeto-especial a { margin-top: 12px; }
   }
   @media (max-width: 1024px) {
     .mining-product-showcase { grid-template-columns: repeat(2, 1fr); }
+    .mining-sobre-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+    .mining-contatos-grid { grid-template-columns: 1fr !important; }
+    .mining-protecao-grid { grid-template-columns: repeat(2,1fr) !important; }
+    .mining-segmentos-grid { grid-template-columns: repeat(2,1fr) !important; }
   }
+  @media (max-width: 420px) {
+    .mining-protecao-grid { grid-template-columns: 1fr !important; }
+    .mining-segmentos-grid { grid-template-columns: 1fr !important; }
+  }
+
+
+  /* ═══════════════════════════════
+     ÍCONES LOCAIS — filtros de cor
+  ═══════════════════════════════ */
+  .icon {
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+  /* preto puro como base → recolore via filter */
+  .icon-navy   { filter: brightness(0) saturate(100%) invert(13%) sepia(40%) saturate(900%) hue-rotate(195deg) brightness(55%) contrast(105%); }
+  .icon-red    { filter: brightness(0) saturate(100%) invert(23%) sepia(75%) saturate(700%) hue-rotate(335deg) brightness(85%) contrast(110%); }
+  .icon-white  { filter: brightness(0) invert(1); }
+  .icon-white70{ filter: brightness(0) invert(1) opacity(.70); }
+  .icon-muted  { filter: brightness(0) saturate(0%) invert(55%); }

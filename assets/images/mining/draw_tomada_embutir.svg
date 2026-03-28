@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" width="200" height="230">
+  <!-- Parede / painel de fundo -->
+  <rect x="0" y="0" width="200" height="230" fill="#eef0f4"/>
+  <!-- Linhas de painel -->
+  <line x1="0" y1="42" x2="200" y2="42" stroke="#d0d8e4" stroke-width="1"/>
+  <line x1="0" y1="188" x2="200" y2="188" stroke="#d0d8e4" stroke-width="1"/>
+  <!-- Recorte de embutir (tracejado) -->
+  <rect x="22" y="36" width="156" height="158" rx="5" fill="none" stroke="#8899bb" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <!-- Placa frontal -->
+  <rect x="30" y="44" width="140" height="142" rx="6" fill="#dde3ec" stroke="#1a2744" stroke-width="2.5"/>
+  <!-- Parafusos de fixação nos 4 cantos -->
+  <circle cx="48" cy="62" r="6" fill="white" stroke="#1a2744" stroke-width="1.8"/>
+  <line x1="44" y1="62" x2="52" y2="62" stroke="#1a2744" stroke-width="1.2"/>
+  <line x1="48" y1="58" x2="48" y2="66" stroke="#1a2744" stroke-width="1.2"/>
+  <circle cx="152" cy="62" r="6" fill="white" stroke="#1a2744" stroke-width="1.8"/>
+  <line x1="148" y1="62" x2="156" y2="62" stroke="#1a2744" stroke-width="1.2"/>
+  <line x1="152" y1="58" x2="152" y2="66" stroke="#1a2744" stroke-width="1.2"/>
+  <circle cx="48" cy="168" r="6" fill="white" stroke="#1a2744" stroke-width="1.8"/>
+  <line x1="44" y1="168" x2="52" y2="168" stroke="#1a2744" stroke-width="1.2"/>
+  <line x1="48" y1="164" x2="48" y2="172" stroke="#1a2744" stroke-width="1.2"/>
+  <circle cx="152" cy="168" r="6" fill="white" stroke="#1a2744" stroke-width="1.8"/>
+  <line x1="148" y1="168" x2="156" y2="168" stroke="#1a2744" stroke-width="1.2"/>
+  <line x1="152" y1="164" x2="152" y2="172" stroke="#1a2744" stroke-width="1.2"/>
+  <!-- Face circular -->
+  <circle cx="100" cy="115" r="52" fill="#1a2744"/>
+  <circle cx="100" cy="115" r="47" fill="#1f3060"/>
+  <circle cx="100" cy="115" r="47" fill="none" stroke="#2e4580" stroke-width="2"/>
+  <!-- Notch de indexação -->
+  <rect x="93" y="64" width="14" height="10" rx="3" fill="#c0392b"/>
+  <!-- Contato terra -->
+  <rect x="93" y="78" width="14" height="21" rx="3.5" fill="#dde3ec"/>
+  <!-- Contatos de fase -->
+  <ellipse cx="79" cy="132" rx="8" ry="10" fill="#dde3ec"/>
+  <ellipse cx="121" cy="132" rx="8" ry="10" fill="#dde3ec"/>
+  <!-- Indicação de profundidade (embutir) -->
+  <line x1="12" y1="44" x2="12" y2="188" stroke="#8899bb" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <line x1="8" y1="44" x2="16" y2="44" stroke="#8899bb" stroke-width="1.5"/>
+  <line x1="8" y1="188" x2="16" y2="188" stroke="#8899bb" stroke-width="1.5"/>
+  <text x="10" y="120" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#8899bb" transform="rotate(-90,10,120)">PROFUNDIDADE</text>
+  <!-- Badges -->
+  <rect x="36" y="48" width="44" height="13" rx="3" fill="#1a2744"/>
+  <text x="58" y="57.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="white" font-weight="bold">IP 67</text>
+  <rect x="120" y="48" width="44" height="13" rx="3" fill="#c0392b"/>
+  <text x="142" y="57.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="white" font-weight="bold">BM/</text>
+</svg>

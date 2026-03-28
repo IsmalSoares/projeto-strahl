@@ -63,15 +63,29 @@
   });
 
   // ─── DS sub-nav buttons (with anchor scroll) ───
-  document.querySelectorAll('.ds-nav-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var navBar = this.closest('.ds-nav-bar');
-      navBar.querySelectorAll('.ds-nav-btn').forEach(function(b) { b.classList.remove('active'); });
-      this.classList.add('active');
-      var targetId = this.getAttribute('data-target');
-      if (targetId) {
-        var target = document.getElementById(targetId);
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.ds-nav-btn');
+    if (!btn) return;
+    var navBar = btn.closest('.ds-nav-bar');
+    if (navBar) navBar.querySelectorAll('.ds-nav-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    var targetId = btn.getAttribute('data-target');
+    if (targetId) {
+      var target = document.getElementById(targetId);
+      if (target) {
+        var headerH = 68;  // header sticky
+        var navH = navBar ? navBar.offsetHeight : 0;
+        var offset = target.getBoundingClientRect().top + window.pageYOffset - headerH - navH - 16;
+        window.scrollTo({ top: offset, behavior: 'smooth' });
       }
-    });
+    }
   });
+
+// Datasheet: troca imagem principal com ID customizado
+function dsSetImgCustom(imgId, thumb, src) {
+  var el = document.getElementById(imgId);
+  if (el) el.src = src;
+  var panel = thumb.closest('.ds-thumbs');
+  if (panel) panel.querySelectorAll('.ds-thumb').forEach(function(t){ t.classList.remove('active'); });
+  thumb.classList.add('active');
+}
