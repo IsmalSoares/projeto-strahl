@@ -1435,3 +1435,7 @@
   .icon-white  { filter: brightness(0) invert(1); }
   .icon-white70{ filter: brightness(0) invert(1) opacity(.70); }
   .icon-muted  { filter: brightness(0) saturate(0%) invert(55%); }
+
+  /* Ícones em seções de fundo escuro (rodapés e testeiras navy) */
+  footer .icon-navy,
+  .tech-section .icon-navy { filter: brightness(0) invert(1); }
