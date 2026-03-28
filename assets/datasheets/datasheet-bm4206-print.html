@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha Técnica — BM/4206 · STRAHL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Barlow', sans-serif; font-size: 11pt; color: #1b1c1c; background: #fff; }
+
+    @page { size: A4 portrait; margin: 14mm 16mm 14mm 16mm; }
+    @media print {
+      .no-print { display: none !important; }
+      body { font-size: 9.5pt; }
+      a { text-decoration: none; color: inherit; }
+      .avoid-break { page-break-inside: avoid; }
+    }
+    @media screen {
+      body { background: #e5e5e5; padding: 24px 0 40px; }
+      .sheet { width: 210mm; min-height: 297mm; background: #fff; margin: 0 auto; padding: 14mm 16mm; box-shadow: 0 2px 24px rgba(0,0,0,.18); }
+    }
+
+    .print-bar { width: 210mm; margin: 0 auto 16px; display: flex; justify-content: flex-end; gap: 10px; }
+    .btn-print { background: #c0392b; color: #fff; border: none; padding: 9px 20px; font-family: 'Barlow', sans-serif; font-size: 13px; font-weight: 600; border-radius: 4px; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+    .btn-print:hover { background: #a93226; }
+
+    .ds-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 3px solid #1a2744; padding-bottom: 10px; margin-bottom: 10px; }
+    .ds-header-tag { font-size: 8pt; text-transform: uppercase; letter-spacing: .1em; color: #888; margin-bottom: 2px; }
+    .ds-header-ref { font-size: 18pt; font-weight: 700; color: #1a2744; font-family: 'Barlow Condensed', sans-serif; }
+    .ds-header-title { font-size: 13pt; font-weight: 700; color: #1a2744; margin-top: 2px; }
+    .ds-header-sub { font-size: 8pt; color: #666; margin-top: 1px; }
+    .ds-header-right { text-align: right; }
+
+    .intro-row { display: grid; grid-template-columns: 100px 1fr; gap: 14px; margin: 12px 0; align-items: start; }
+    .intro-img { width: 100px; height: 100px; object-fit: contain; border: 1px solid #e0e0e0; border-radius: 4px; padding: 4px; }
+    .linha-badge-print { display: inline-block; background: #1a2744; color: #fff; font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 3px 10px; border-radius: 3px; margin-bottom: 6px; }
+    .intro-desc { font-size: 9.5pt; color: #444; line-height: 1.4; }
+
+    .section-title { font-size: 9pt; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: #1a2744; border-left: 3px solid #c0392b; padding-left: 7px; margin: 12px 0 7px; }
+
+    .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid #d0d0d0; border-radius: 4px; overflow: hidden; margin-bottom: 10px; }
+    .specs-col:first-child { border-right: 1px solid #d0d0d0; }
+    .spec-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 10px; border-bottom: 1px solid #e8e8e8; font-size: 9.5pt; }
+    .specs-col:last-child .spec-row:last-child, .specs-col:first-child .spec-row:last-child { border-bottom: none; }
+    .spec-label { color: #666; }
+    .spec-val { font-weight: 700; color: #1b1c1c; }
+    .spec-val.red { color: #c0392b; }
+
+    .prot-row { display: flex; gap: 8px; margin-bottom: 10px; }
+    .prot-badge { flex: 1; background: #1a2744; color: #fff; border-radius: 4px; padding: 7px 10px; text-align: center; }
+    .prot-badge.light { background: #f4f4f4; color: #1a2744; }
+    .pb-level { font-size: 14pt; font-weight: 800; font-family: 'Barlow Condensed', sans-serif; line-height: 1.1; }
+    .pb-desc { font-size: 7.5pt; margin-top: 2px; opacity: .8; }
+
+    .diff-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+    .diff-item { background: #f7f8fa; border: 1px solid #e0e0e0; border-radius: 4px; padding: 8px 10px; }
+    .diff-title { font-size: 8.5pt; font-weight: 700; color: #1a2744; margin-bottom: 3px; }
+    .diff-desc { font-size: 8pt; color: #555; line-height: 1.4; }
+
+    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 18px; margin-bottom: 10px; }
+    .feature-item { display: flex; align-items: flex-start; gap: 5px; font-size: 9pt; color: #444; padding: 4px 0; border-bottom: 1px solid #ececec; }
+    .feature-check { color: #c0392b; font-size: 10pt; flex-shrink: 0; margin-top: 1px; }
+
+    /* SKU tables */
+    .sku-section { margin-bottom: 10px; }
+    .sku-header { background: #1a2744; color: #fff; padding: 5px 10px; font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; border-radius: 3px 3px 0 0; }
+    table.sku-table { width: 100%; border-collapse: collapse; font-size: 8pt; border: 1px solid #d0d0d0; border-top: none; border-radius: 0 0 3px 3px; overflow: hidden; }
+    table.sku-table thead tr { background: #f4f4f4; }
+    table.sku-table thead th { padding: 4px 6px; text-align: center; font-size: 7.5pt; font-weight: 700; border-bottom: 1px solid #d0d0d0; border-right: 1px solid #e8e8e8; }
+    table.sku-table thead th:first-child { text-align: left; }
+    table.sku-table tbody td { padding: 4px 6px; text-align: center; border-bottom: 1px solid #e8e8e8; border-right: 1px solid #e8e8e8; }
+    table.sku-table tbody td:first-child { text-align: left; color: #555; }
+    table.sku-table tbody tr.highlight-row { background: #fff8f7; }
+    .sku-ref { font-weight: 700; font-size: 8pt; color: #1a2744; }
+    .sku-ref.featured { background: #c0392b; color: #fff; padding: 1px 5px; border-radius: 2px; }
+    .th-violet { color: #6a1d8c; }
+    .th-yellow { color: #8a6000; }
+    .th-blue { color: #1a5faa; }
+    .th-red { color: #c0392b; }
+
+    .obs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+    .obs-box { background: #f7f8fa; border: 1px solid #e0e0e0; border-radius: 4px; padding: 10px 12px; }
+    .obs-box h4 { font-size: 9pt; font-weight: 700; color: #1a2744; margin-bottom: 5px; }
+    .obs-box p { font-size: 8pt; color: #555; line-height: 1.5; }
+    .norm-badges { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 6px; }
+    .norm-badge { background: #1a2744; color: #fff; font-size: 7.5pt; font-weight: 700; padding: 2px 7px; border-radius: 3px; }
+
+    .ds-footer { border-top: 2px solid #1a2744; padding-top: 7px; margin-top: 14px; display: flex; justify-content: space-between; align-items: center; font-size: 7.5pt; color: #888; }
+    .ds-footer strong { color: #1a2744; }
+    hr.divider { border: none; border-top: 1px solid #e0e0e0; margin: 10px 0; }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar no-print">
+    <button class="btn-print" onclick="window.print()">&#x2399; Imprimir / Salvar PDF</button>
+    <button class="btn-print" style="background:#1a2744" onclick="window.close()">✕ Fechar</button>
+  </div>
+
+  <div class="sheet">
+
+    <!-- CABEÇALHO -->
+    <div class="ds-header avoid-break">
+      <div>
+        <img src="../images/logo_strahl.png" alt="STRAHL" style="height:38px;display:block;margin-bottom:2px">
+        <div class="ds-header-tag">Ficha Técnica de Produto · Linha Mining Block® · Carcaça Termoplástica</div>
+        <div class="ds-header-title">Tomada de Bloqueio Mecânico IP67 · 16A, 32A e 63A</div>
+        <div class="ds-header-sub">Produção 100% nacional · NBR IEC 60309 · Nylon 6.6 Auto-extinguível</div>
+      </div>
+      <div class="ds-header-right">
+        <div class="ds-header-tag">Referência de Produto</div>
+        <div class="ds-header-ref">REF: BM/4206</div>
+        <div class="ds-header-sub" style="margin-top:4px">Emissão: 2026 &nbsp;·&nbsp; Rev. A</div>
+      </div>
+    </div>
+
+    <!-- INTRO -->
+    <div class="intro-row avoid-break">
+      <img class="intro-img" src="../images/mining/BM-4206.jpg" alt="Tomada BM/4206">
+      <div>
+        <div class="linha-badge-print">Linha Mining Block® · Carcaça Termoplástica</div>
+        <p class="intro-desc">
+          Tomada industrial com bloqueio mecânico e carcaça em Nylon 6.6 auto-extinguível. O mecanismo de bloqueio impede conexão e desconexão sob carga elétrica, eliminando arco voltaico e garantindo máxima segurança em ambientes severos de mineração, indústria pesada e construção. Grau de proteção IP67 (à prova de poeira e imersão) e IK07 (6,0 joules). Disponível em versões Sobrepor e Embutir, correntes de 16A, 32A e 63A, polos 3P, 4P e 5P.
+        </p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ESPECIFICAÇÕES -->
+    <div class="section-title">Especificações Elétricas e Técnicas</div>
+    <div class="specs-grid avoid-break">
+      <div class="specs-col">
+        <div class="spec-row"><span class="spec-label">Tensão de Utilização</span><span class="spec-val red">até 690V</span></div>
+        <div class="spec-row"><span class="spec-label">Corrente Nominal</span><span class="spec-val">16A · 32A · 63A</span></div>
+        <div class="spec-row"><span class="spec-label">Nº de Pólos</span><span class="spec-val">3P · 4P · 5P</span></div>
+        <div class="spec-row"><span class="spec-label">Posição Pino Terra</span><span class="spec-val">6H (padrão)</span></div>
+        <div class="spec-row"><span class="spec-label">Temperatura de Trabalho</span><span class="spec-val">−20°C a +120°C</span></div>
+      </div>
+      <div class="specs-col">
+        <div class="spec-row"><span class="spec-label">Grau de Proteção</span><span class="spec-val">IP67 · IK07</span></div>
+        <div class="spec-row"><span class="spec-label">Resistência a Impacto</span><span class="spec-val">6,0 Joules</span></div>
+        <div class="spec-row"><span class="spec-label">Carcaça</span><span class="spec-val">Nylon 6.6 (Poliamida)</span></div>
+        <div class="spec-row"><span class="spec-label">Contatos</span><span class="spec-val">Latão maciço c/ cortes laterais</span></div>
+        <div class="spec-row"><span class="spec-label">Conformidade</span><span class="spec-val">NBR IEC 60309</span></div>
+      </div>
+    </div>
+
+    <div class="prot-row avoid-break">
+      <div class="prot-badge">
+        <div class="pb-level">IP67</div>
+        <div class="pb-desc">À prova de poeira<br>Imersão temporária</div>
+      </div>
+      <div class="prot-badge light">
+        <div class="pb-level">IK07</div>
+        <div class="pb-desc">Impacto mecânico<br>6,0 joules</div>
+      </div>
+      <div class="prot-badge light">
+        <div class="pb-level" style="font-size:11pt;padding-top:2px">NBR IEC<br>60309</div>
+        <div class="pb-desc">CEE 17 · VDE 0623</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- TABELA DE SKUs -->
+    <div class="section-title">Tabela de Seleção — Tomada Sobrepor BM/ (por corrente e tensão)</div>
+
+    <div class="sku-section avoid-break">
+      <div class="sku-header">16A · Tomada Sobrepor BM/</div>
+      <table class="sku-table">
+        <thead>
+          <tr>
+            <th>Polos</th>
+            <th class="th-violet">24V</th>
+            <th class="th-yellow">110/130V</th>
+            <th class="th-blue">200/250V</th>
+            <th class="th-red">380/415V</th>
+            <th>480/500V</th>
+            <th>600/690V</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>3 (2P+T)</td><td><span class="sku-ref">BM/3002</span></td><td><span class="sku-ref">BM/3004</span></td><td><span class="sku-ref">BM/3006</span></td><td><span class="sku-ref">BM/3009</span></td><td><span class="sku-ref">BM/3007</span></td><td><span class="sku-ref">BM/3005</span></td></tr>
+          <tr><td>4 (3P+T)</td><td><span class="sku-ref">BM/4002</span></td><td><span class="sku-ref">BM/4004</span></td><td><span class="sku-ref">BM/4009</span></td><td><span class="sku-ref">BM/4006</span></td><td><span class="sku-ref">BM/4007</span></td><td><span class="sku-ref">BM/4005</span></td></tr>
+          <tr><td>5 (3P+N+T)</td><td><span class="sku-ref">BM/5002</span></td><td><span class="sku-ref">BM/5004</span></td><td><span class="sku-ref">BM/5009</span></td><td><span class="sku-ref">BM/5006</span></td><td><span class="sku-ref">BM/5007</span></td><td><span class="sku-ref">BM/5005</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sku-section avoid-break" style="margin-top:8px">
+      <div class="sku-header">32A · Tomada Sobrepor BM/</div>
+      <table class="sku-table">
+        <thead>
+          <tr>
+            <th>Polos</th>
+            <th class="th-violet">24V</th>
+            <th class="th-yellow">110/130V</th>
+            <th class="th-blue">200/250V</th>
+            <th class="th-red">380/415V</th>
+            <th>480/500V</th>
+            <th>600/690V</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>3 (2P+T)</td><td><span class="sku-ref">BM/3202</span></td><td><span class="sku-ref">BM/3204</span></td><td><span class="sku-ref">BM/3206</span></td><td><span class="sku-ref">BM/3209</span></td><td><span class="sku-ref">BM/3207</span></td><td><span class="sku-ref">BM/3205</span></td></tr>
+          <tr class="highlight-row"><td>4 (3P+T) ◄</td><td><span class="sku-ref">BM/4202</span></td><td><span class="sku-ref">BM/4204</span></td><td><span class="sku-ref">BM/4209</span></td><td><span class="sku-ref featured">BM/4206</span></td><td><span class="sku-ref">BM/4207</span></td><td><span class="sku-ref">BM/4205</span></td></tr>
+          <tr><td>5 (3P+N+T)</td><td><span class="sku-ref">BM/5202</span></td><td><span class="sku-ref">BM/5204</span></td><td><span class="sku-ref">BM/5209</span></td><td><span class="sku-ref">BM/5206</span></td><td><span class="sku-ref">BM/5207</span></td><td><span class="sku-ref">BM/5205</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sku-section avoid-break" style="margin-top:8px">
+      <div class="sku-header">63A · Tomada Sobrepor BM/</div>
+      <table class="sku-table">
+        <thead>
+          <tr>
+            <th>Polos</th>
+            <th class="th-violet">24V</th>
+            <th class="th-yellow">110/130V</th>
+            <th class="th-blue">200/250V</th>
+            <th class="th-red">380/415V</th>
+            <th>480/500V</th>
+            <th>600/690V</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>3 (2P+T)</td><td><span class="sku-ref">BM/3502</span></td><td><span class="sku-ref">BM/3504</span></td><td><span class="sku-ref">BM/3506</span></td><td><span class="sku-ref">BM/3509</span></td><td><span class="sku-ref">BM/3507</span></td><td><span class="sku-ref">BM/3505</span></td></tr>
+          <tr><td>4 (3P+T)</td><td><span class="sku-ref">BM/4502</span></td><td><span class="sku-ref">BM/4504</span></td><td><span class="sku-ref">BM/4509</span></td><td><span class="sku-ref">BM/4506</span></td><td><span class="sku-ref">BM/4507</span></td><td><span class="sku-ref">BM/4505</span></td></tr>
+          <tr><td>5 (3P+N+T)</td><td><span class="sku-ref">BM/5502</span></td><td><span class="sku-ref">BM/5504</span></td><td><span class="sku-ref">BM/5509</span></td><td><span class="sku-ref">BM/5506</span></td><td><span class="sku-ref">BM/5507</span></td><td><span class="sku-ref">BM/5505</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:7.5pt;color:#888;margin:6px 0 10px">◄ BM/4206 = referência desta ficha técnica (32A · 4P · 380/415V). Para outras posições horárias ou tensões, consulte-nos.</p>
+
+    <hr class="divider">
+
+    <!-- DIFERENCIAIS -->
+    <div class="section-title">Diferenciais Técnicos</div>
+    <div class="diff-grid avoid-break">
+      <div class="diff-item">
+        <div class="diff-title">Bloqueio Mecânico em Carga</div>
+        <p class="diff-desc">Impede conexão e desconexão sob carga elétrica, eliminando arco voltaico e protegendo operador e equipamento.</p>
+      </div>
+      <div class="diff-item">
+        <div class="diff-title">Buchas Autocentrantes</div>
+        <p class="diff-desc">Latão maciço com cortes laterais. Posição flutuante assegura pressão de contato constante e fácil inserção.</p>
+      </div>
+      <div class="diff-item">
+        <div class="diff-title">Bornes Integrados</div>
+        <p class="diff-desc">Peça única com buchas e pinos: melhor continuidade elétrica e fixação segura dos condutores.</p>
+      </div>
+      <div class="diff-item">
+        <div class="diff-title">Cobertura das Buchas</div>
+        <p class="diff-desc">Evita contatos acidentais, arcos elétricos, golpes mecânicos e acúmulo de sujeira nas buchas.</p>
+      </div>
+      <div class="diff-item">
+        <div class="diff-title">Carcaça Nylon 6.6</div>
+        <p class="diff-desc">Auto-extinguível, resistente à abrasão e corrosão. Cores de identificação por tensão. Fácil manuseio.</p>
+      </div>
+      <div class="diff-item">
+        <div class="diff-title">Passa-Cabo Flexível</div>
+        <p class="diff-desc">Hermeticidade perfeita ao condutor. Impede entrada de pó ou água. Evita atrito do cabo com a carcaça.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- CARACTERÍSTICAS -->
+    <div class="section-title">Características e Vantagens</div>
+    <div class="features-grid avoid-break">
+      <div class="feature-item"><span class="feature-check">✔</span> Bloqueio mecânico impede conexão/desconexão sob carga</div>
+      <div class="feature-item"><span class="feature-check">✔</span> Evita erros de inserção com tensões diferentes</div>
+      <div class="feature-item"><span class="feature-check">✔</span> Não permite inversão de polos</div>
+      <div class="feature-item"><span class="feature-check">✔</span> Identificação de tensão pela cor da carcaça</div>
+      <div class="feature-item"><span class="feature-check">✔</span> Núcleos compactos — máximo rendimento nominal</div>
+      <div class="feature-item"><span class="feature-check">✔</span> Cobertura protetora das buchas — sem arcos ou sujeira</div>
+      <div class="feature-item"><span class="feature-check">✔</span> Carcaça Nylon 6.6 resistente à abrasão e corrosão</div>
+      <div class="feature-item"><span class="feature-check">✔</span> Passa-cabo flexível — hermeticidade perfeita</div>
+      <div class="feature-item"><span class="feature-check">✔</span> Produção 100% nacional — injetado na fábrica STRAHL</div>
+      <div class="feature-item"><span class="feature-check">✔</span> Todo lote inspecionado e ensaiado conforme normas</div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- CONFORMIDADE -->
+    <div class="section-title">Matéria Prima e Conformidade Normativa</div>
+    <div class="obs-grid avoid-break">
+      <div class="obs-box">
+        <h4>Matéria Prima</h4>
+        <p>Miolo e Carcaça injetados internamente em termoplástico Nylon 6.6 auto-extinguível (Poliamida). Buchas de contato em latão maciço com cortes laterais para pressão constante. Todos os componentes plásticos e contatos de latão são produzidos na fábrica STRAHL, em conformidade com os requisitos regulamentares e estatutários pertinentes. Todo lote produzido é inspecionado e ensaiado com resultados registrados por pessoal competente.</p>
+      </div>
+      <div class="obs-box">
+        <h4>Conformidade Normativa</h4>
+        <div class="norm-badges">
+          <span class="norm-badge">NBR IEC 60309</span>
+          <span class="norm-badge">CEE 17</span>
+          <span class="norm-badge">VDE 0623</span>
+        </div>
+        <p>IP67: totalmente protegido contra poeira (6) e imersão temporária (7). IK07: resistência a impacto de 6,0 joules. 1º e 2º algarismos IP conforme IEC 144 e IEC 529; 3º algarismo conforme Anexo 1 da norma NFC 20 010.</p>
+        <p style="margin-top:6px;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#888">Materiais Elétricos STRAHL</p>
+      </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <div class="ds-footer">
+      <div>
+        <strong>Materiais Elétricos STRAHL</strong> &nbsp;·&nbsp;
+        São Paulo, SP — Brasil &nbsp;·&nbsp;
+        11 2818-3838 &nbsp;·&nbsp; vendas@strahl.com
+      </div>
+      <div>
+        REF: BM/4206 &nbsp;·&nbsp; Rev. A &nbsp;·&nbsp; 2026 &nbsp;·&nbsp;
+        <strong>strahl.com</strong>
+      </div>
+    </div>
+
+  </div><!-- /sheet -->
+</body>
+</html>
