@@ -1,3 +1,10 @@
+  // ─── Mobile nav accordion groups ───
+  function toggleMobileGroup(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.classList.toggle('open');
+  }
+
   // ─── Mobile nav toggle ───
   function toggleMobileNav() {
     var nav = document.getElementById('mobile-nav');

@@ -58,21 +58,48 @@
 <!-- ── MENU MOBILE ── -->
 <div class="mobile-nav" id="mobile-nav" style="display:none">
   <div class="mobile-nav-links">
-    <span class="mobile-nav-label">Produtos</span>
-    <a class="mobile-nav-link" onclick="goTo('cekton')">Linha Cekton <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:24px;height:24px"></a>
-    <a class="mobile-nav-link" onclick="goTo('datasheet')">Datasheet 3076/CK <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:24px;height:24px"></a>
-    <a class="mobile-nav-link" onclick="goTo('datasheet-4079')">Datasheet 4079/CK <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:24px;height:24px"></a>
-    <a class="mobile-nav-link" href="#">Linha Storm Block <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:24px;height:24px"></a>
-    <span class="mobile-nav-label">Linha Mining Block</span>
-    <a class="mobile-nav-link" onclick="goTo('mining-termoplastica')" href="javascript:void(0)" style="padding-left:36px;font-size:15px">16A, 32A e 63A — Bloqueio Mecânico <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:24px;height:24px"></a>
-    <a class="mobile-nav-link" href="#" style="padding-left:36px;font-size:15px">16A, 32A e 63A — Ultrarresistente <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:24px;height:24px"></a>
-    <a class="mobile-nav-link" href="#" style="padding-left:36px;font-size:15px">16A, 32A e 63A — Carcaça Alumínio <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:24px;height:24px"></a>
-    <a class="mobile-nav-link" href="#" style="padding-left:36px;font-size:15px">125A, 250A e 300A <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:24px;height:24px"></a>
-    <a class="mobile-nav-link" href="javascript:void(0)" onclick="goTo('mining-altacorrente')" style="padding-left:36px;font-size:15px">400A e 630A Alta Corrente <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:24px;height:24px"></a>
-    <span class="mobile-nav-label">Empresa</span>
-    <a class="mobile-nav-link" onclick="goTo('home')">Home <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:24px;height:24px"></a>
-    <a class="mobile-nav-link" href="#">Sobre Nós <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:24px;height:24px"></a>
-    <a class="mobile-nav-link" href="#">Contato <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:24px;height:24px"></a>
+
+    <!-- ── GRUPO: PRODUTOS ── -->
+    <div class="mobile-nav-group" id="mnav-produtos">
+      <div class="mobile-nav-group-hd" onclick="toggleMobileGroup('mnav-produtos')">
+        Produtos
+        <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy group-chevron" style="width:22px;height:22px">
+      </div>
+      <div class="mobile-nav-group-bd">
+        <a class="mobile-nav-link" href="javascript:void(0)" onclick="goTo('cekton')">Linha Cekton <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:20px;height:20px"></a>
+        <a class="mobile-nav-link" href="javascript:void(0)" onclick="goTo('schuko')">Linha Schuko <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:20px;height:20px"></a>
+        <a class="mobile-nav-link" href="#">Linha Storm Block <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:20px;height:20px"></a>
+
+        <!-- Sub-grupo: Mining Block -->
+        <div class="mobile-nav-group" id="mnav-mining">
+          <div class="mobile-nav-group-hd mobile-nav-subhd" onclick="toggleMobileGroup('mnav-mining')">
+            Linha Mining Block
+            <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy group-chevron" style="width:18px;height:18px">
+          </div>
+          <div class="mobile-nav-group-bd">
+            <a class="mobile-nav-link" href="javascript:void(0)" onclick="goTo('mining-termoplastica')" style="padding-left:36px;font-size:15px">16A, 32A e 63A — Bloqueio Mecânico <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:18px;height:18px"></a>
+            <a class="mobile-nav-link" href="#" style="padding-left:36px;font-size:15px">16A, 32A e 63A — Ultrarresistente <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:18px;height:18px"></a>
+            <a class="mobile-nav-link" href="#" style="padding-left:36px;font-size:15px">16A, 32A e 63A — Carcaça Alumínio <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:18px;height:18px"></a>
+            <a class="mobile-nav-link" href="#" style="padding-left:36px;font-size:15px">125A, 250A e 300A <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:18px;height:18px"></a>
+            <a class="mobile-nav-link" href="javascript:void(0)" onclick="goTo('mining-altacorrente')" style="padding-left:36px;font-size:15px">400A e 630A Alta Corrente <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:18px;height:18px"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── GRUPO: EMPRESA ── -->
+    <div class="mobile-nav-group" id="mnav-empresa">
+      <div class="mobile-nav-group-hd" onclick="toggleMobileGroup('mnav-empresa')">
+        Empresa
+        <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy group-chevron" style="width:22px;height:22px">
+      </div>
+      <div class="mobile-nav-group-bd">
+        <a class="mobile-nav-link" href="javascript:void(0)" onclick="goTo('home')">Home <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:20px;height:20px"></a>
+        <a class="mobile-nav-link" href="#">Sobre Nós <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:20px;height:20px"></a>
+        <a class="mobile-nav-link" href="#">Contato <img src="assets/images/icons/chevron_right.svg" class="icon icon-navy" style="width:20px;height:20px"></a>
+      </div>
+    </div>
+
   </div>
   <div class="mobile-nav-footer">
     <a class="nav-phone" href="https://api.whatsapp.com/send/?phone=551128183838&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">

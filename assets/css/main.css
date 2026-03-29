@@ -1068,6 +1068,39 @@
   }
   .mobile-nav-footer .nav-phone { font-size: 16px; }
 
+  /* ── Mobile nav: grupos colapsáveis ── */
+  .mobile-nav-group { border-bottom: 1px solid var(--gray-border); }
+  .mobile-nav-group-hd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--navy);
+    cursor: pointer;
+    user-select: none;
+    transition: background .15s, color .15s;
+  }
+  .mobile-nav-group-hd:hover { background: var(--gray-bg); color: var(--red); }
+  .mobile-nav-subhd {
+    padding: 13px 24px 13px 20px;
+    font-size: 15px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--text-muted);
+    background: var(--gray-bg);
+    border-top: 1px solid var(--gray-border);
+  }
+  .mobile-nav-subhd:hover { color: var(--red); }
+  .mobile-nav-group-bd { display: none; }
+  .mobile-nav-group.open > .mobile-nav-group-bd { display: block; }
+  .mobile-nav-group-hd .group-chevron { transition: transform .25s; flex-shrink: 0; }
+  .mobile-nav-group.open > .mobile-nav-group-hd .group-chevron { transform: rotate(90deg); }
+
   /* ═══════════════════════════════
      RESPONSIVO — TABLET (≤ 1024px)
   ═══════════════════════════════ */
@@ -1173,6 +1206,8 @@
     /* Scroll horizontal em tabelas */
     .ip-block { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     table.sel-table { min-width: 540px; }
+    /* Alta Corrente: tabelas de 3 colunas cabem sem scroll */
+    .ampere-block table.sel-table { min-width: 0; }
 
     /* DATASHEET */
     .ds-header-inner { flex-direction: column; gap: 8px; padding: 20px; }
