@@ -1089,7 +1089,6 @@
   .mobile-nav-group-hd:hover { background: var(--gray-bg); color: var(--red); }
   .mobile-nav-subhd {
     padding: 13px 24px 13px 20px;
-    font-size: 15px;
     color: var(--text-muted);
     background: var(--gray-bg);
     border-top: 1px solid var(--gray-border);
