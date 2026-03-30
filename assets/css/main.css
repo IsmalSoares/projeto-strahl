@@ -946,7 +946,7 @@
     color: var(--white);
     letter-spacing: .04em;
   }
-  .norm-badge.outline { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
+  .norm-badge.outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,.65); }
 
   /* Sidebar left DS */
   .ds-sidebar {
